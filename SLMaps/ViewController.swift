@@ -24,6 +24,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let dataURL = Bundle.main.url(forResource: "Locations", withExtension: "json")
+        if let dataURL = dataURL, let data = try? Data(contentsOf: dataURL) {
+            let cc = ModelMap(jsonData: data)
+            print(cc)
+        }
+
         mapView.showsUserLocation = true
 
         LocationService.shared.didUpdateLocations = { locations in
