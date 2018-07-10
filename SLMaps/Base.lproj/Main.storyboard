@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SLMaps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FAk-5C-oMn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTH-DU-N3m">
+                                <rect key="frame" x="303" y="50" width="56" height="30"/>
+                                <state key="normal" title="Zoom In"/>
+                                <connections>
+                                    <action selector="zoomInButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GwX-uz-r7K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sab-X5-LGK">
+                                <rect key="frame" x="290" y="88" width="69" height="30"/>
+                                <state key="normal" title="Zoom Out"/>
+                                <connections>
+                                    <action selector="zoomOutButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b2f-5N-7fD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Dy-4z-IN3">
+                                <rect key="frame" x="300" y="126" width="59" height="30"/>
+                                <state key="normal" title="Location"/>
+                                <connections>
+                                    <action selector="locationButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mPT-nR-G9o"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HZn-Co-OCW">
+                                <rect key="frame" x="16" y="619" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Regular"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mapTypeAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="3zw-k1-G9j"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sab-X5-LGK" secondAttribute="trailing" constant="16" id="2WH-WX-qcX"/>
+                            <constraint firstItem="3Dy-4z-IN3" firstAttribute="top" secondItem="Sab-X5-LGK" secondAttribute="bottom" constant="8" id="2ao-NF-BzM"/>
+                            <constraint firstItem="HZn-Co-OCW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6Jv-hg-hHn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HZn-Co-OCW" secondAttribute="trailing" constant="16" id="BA4-QF-qFH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HZn-Co-OCW" secondAttribute="bottom" constant="20" id="Jda-za-lB2"/>
+                            <constraint firstItem="Sab-X5-LGK" firstAttribute="top" secondItem="FTH-DU-N3m" secondAttribute="bottom" constant="8" id="L2W-0A-jfm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Dy-4z-IN3" secondAttribute="trailing" constant="16" id="MV9-K2-wBw"/>
+                            <constraint firstItem="FTH-DU-N3m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="RRZ-aj-rOQ"/>
+                            <constraint firstItem="FAk-5C-oMn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fzi-RT-ihZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FTH-DU-N3m" secondAttribute="trailing" constant="16" id="kgw-w5-pdq"/>
+                            <constraint firstItem="FAk-5C-oMn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sC3-oQ-DU2"/>
+                            <constraint firstItem="FAk-5C-oMn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ueR-Kw-txX"/>
+                            <constraint firstItem="FAk-5C-oMn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="yBd-NG-wfM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="locationButton" destination="3Dy-4z-IN3" id="NoC-vN-K8S"/>
+                        <outlet property="mapTypeSwitch" destination="HZn-Co-OCW" id="X38-Qr-tI9"/>
+                        <outlet property="mapView" destination="FAk-5C-oMn" id="bZQ-Hd-AWS"/>
+                        <outlet property="zoomInButton" destination="FTH-DU-N3m" id="KFF-I4-hTQ"/>
+                        <outlet property="zoomOutButton" destination="Sab-X5-LGK" id="vN0-PF-O4L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>
