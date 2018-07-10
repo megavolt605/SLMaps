@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78B478D820F4DA45007FA7CB /* Locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 78B478D720F4DA45007FA7CB /* Locations.json */; };
 		78B7DBA420ED36AE00F36B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7DBA320ED36AE00F36B1A /* AppDelegate.swift */; };
 		78B7DBA620ED36AE00F36B1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7DBA520ED36AE00F36B1A /* ViewController.swift */; };
 		78B7DBA920ED36AE00F36B1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78B7DBA720ED36AE00F36B1A /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		78B478D720F4DA45007FA7CB /* Locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Locations.json; sourceTree = "<group>"; };
 		78B7DBA020ED36AD00F36B1A /* SLMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B7DBA320ED36AE00F36B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78B7DBA520ED36AE00F36B1A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				78BA281820ED4482002B3BBE /* Antalia.gpx */,
 				78B7DBB520ED372300F36B1A /* LocationService.swift */,
 				78BA281920ED50E1002B3BBE /* Annotation.swift */,
+				78B478D720F4DA45007FA7CB /* Locations.json */,
 				78B7DBA720ED36AE00F36B1A /* Main.storyboard */,
 				78B7DBAA20ED36AF00F36B1A /* Assets.xcassets */,
 				78B7DBAC20ED36AF00F36B1A /* LaunchScreen.storyboard */,
@@ -130,6 +133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78B478D820F4DA45007FA7CB /* Locations.json in Resources */,
 				78B7DBAE20ED36AF00F36B1A /* LaunchScreen.storyboard in Resources */,
 				78B7DBAB20ED36AF00F36B1A /* Assets.xcassets in Resources */,
 				78B7DBA920ED36AE00F36B1A /* Main.storyboard in Resources */,
