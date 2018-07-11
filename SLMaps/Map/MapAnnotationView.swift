@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class AnnotationView: MKAnnotationView {
+class MapAnnotationView: MKAnnotationView {
 
     static let reuseIdentifier = "Annotation"
 
@@ -24,7 +24,7 @@ class AnnotationView: MKAnnotationView {
         }
     }
 
-    init(annotation: Annotation?, reuseIdentifier: String?) {
+    init(annotation: MapAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
 
         bounds = CGRect(x: 0, y: 0, width: 16, height: 16)

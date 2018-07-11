@@ -15,12 +15,12 @@ class MapViewControllerDataSource {
     var initialLocation: CLLocation?
     var currentLocation: CLLocation?
 
-    var allAnnotations: [Annotation] {
+    var allAnnotations: [MapAnnotation] {
         guard let index = cityIndex else { return [] }
-        var result = [Annotation]()
+        var result = [MapAnnotation]()
         MapService.shared.modelMap.cities[index].lines.forEach { line in
             line.stations.forEach { station in
-                if let annotation = Annotation(line: line, station: station) {
+                if let annotation = MapAnnotation(line: line, station: station) {
                     result.append(annotation)
                 }
             }

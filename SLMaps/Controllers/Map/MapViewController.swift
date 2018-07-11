@@ -93,12 +93,12 @@ class MapViewController: UIViewController {
 extension MapViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        var view = mapView.dequeueReusableAnnotationView(withIdentifier: AnnotationView.reuseIdentifier)
-        if let annotation = annotation as? Annotation {
+        var view = mapView.dequeueReusableAnnotationView(withIdentifier: MapAnnotationView.reuseIdentifier)
+        if let annotation = annotation as? MapAnnotation {
             if view == nil {
                 view = annotation.createView()
             }
-            if let view = view as? AnnotationView {
+            if let view = view as? MapAnnotationView {
                 view.backgroundView.backgroundColor = UIColor.colorWith(string: annotation.line.hex_color)
             }
         }
