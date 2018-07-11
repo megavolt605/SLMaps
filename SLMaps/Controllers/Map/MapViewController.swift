@@ -45,6 +45,7 @@ class MapViewController: UIViewController {
 
         // add annotations
         mapView.addAnnotations(dataSource.allAnnotations)
+        mapView.addOverlays(dataSource.allOverlays)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -111,6 +112,10 @@ extension MapViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
         view.isSelected = false
+    }
+
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        return MapOverlayRenderer(overlay: overlay)
     }
 
 }

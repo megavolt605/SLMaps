@@ -28,5 +28,11 @@ class MapViewControllerDataSource {
         return result
     }
 
+    var allOverlays: [MapOverlay] {
+        guard let index = cityIndex else { return [] }
+        return MapService.shared.modelMap.cities[index].lines
+            .map { MapOverlay(line: $0) }
+    }
+
 }
 
