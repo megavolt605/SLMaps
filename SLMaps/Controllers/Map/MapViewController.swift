@@ -19,6 +19,8 @@ class MapViewController: UIViewController {
 
     @IBOutlet weak var mapTypeSwitch: UISegmentedControl!
 
+    var dataSource = MapViewControllerDataSource()
+
     var currentLocation: CLLocation?
 
     override func viewDidLoad() {
@@ -29,10 +31,6 @@ class MapViewController: UIViewController {
         LocationService.shared.didUpdateLocations = { locations in
             guard let location = locations.last else { return }
             print("long: \(location.coordinate.longitude), lat: \(location.coordinate.latitude), alt: \(location.altitude)")
-
-//            let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-//            let region = MKCoordinateRegion(center: location.coordinate, span: span)
-//            self.mapView.setRegion(region, animated: true)
             self.currentLocation = location
         }
         LocationService.shared.requestAccess { success in
@@ -42,9 +40,10 @@ class MapViewController: UIViewController {
             }
         }
 
-        let c = CLLocationCoordinate2D(latitude: 51.512703, longitude: -0.115497)
-        let a = Annotation(coordinate: c, title: "Test title", subtitle: "Test subtitle")
-        mapView.addAnnotation(a)
+        updateMapRegion(withLocation: dataSource.initialLocation)
+
+        // add annotations
+        mapView.addAnnotations(dataSource.allAnnotations)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -52,12 +51,14 @@ class MapViewController: UIViewController {
         LocationService.shared.stop()
     }
 
-    var zoom: Double = 64.0 {
-        didSet {
-            let span = MKCoordinateSpan(latitudeDelta: 0.1 * zoom, longitudeDelta: 0.1 * zoom)
-            let region = MKCoordinateRegion(center: mapView.centerCoordinate, span: span)
-            self.mapView.setRegion(region, animated: true)
-        }
+    func updateMapRegion(withLocation location: CLLocation? = nil) {
+        let span = MKCoordinateSpan(latitudeDelta: 0.1 * zoom, longitudeDelta: 0.1 * zoom)
+        let region = MKCoordinateRegion(center: location?.coordinate ?? mapView.centerCoordinate, span: span)
+        self.mapView.setRegion(region, animated: true)
+    }
+
+    var zoom: Double = 1.0 {
+        didSet { updateMapRegion() }
     }
 
     @IBAction func zoomInButtonAction(_ sender: Any) {

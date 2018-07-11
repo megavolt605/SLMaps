@@ -16,5 +16,14 @@ struct ModelStation: Codable {
     var order: Int
     var lat: CLLocationDegrees
     var lng: CLLocationDegrees
-    
+
+    var location: CLLocation? {
+        guard
+            let latitude = CLLocationDegrees(exactly: lat),
+            let longitude = CLLocationDegrees(exactly: lng)
+            else { return nil }
+        
+        return CLLocation(latitude: latitude, longitude: longitude)
+    }
+
 }

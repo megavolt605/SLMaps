@@ -14,6 +14,7 @@
 		784CF94420F60CDD007C7A97 /* CitiesViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CF94320F60CDD007C7A97 /* CitiesViewControllerDataSource.swift */; };
 		784CF94820F60D78007C7A97 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CF94720F60D78007C7A97 /* MapService.swift */; };
 		784CF94A20F6128F007C7A97 /* UIColor+SLMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CF94920F6128F007C7A97 /* UIColor+SLMaps.swift */; };
+		784CF94D20F61773007C7A97 /* MapViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CF94C20F61773007C7A97 /* MapViewControllerDataSource.swift */; };
 		78B478D820F4DA45007FA7CB /* Locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 78B478D720F4DA45007FA7CB /* Locations.json */; };
 		78B478DA20F4E22F007FA7CB /* ModelCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B478D920F4E22F007FA7CB /* ModelCity.swift */; };
 		78B478DC20F4E27D007FA7CB /* ModelLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B478DB20F4E27D007FA7CB /* ModelLine.swift */; };
@@ -36,6 +37,7 @@
 		784CF94320F60CDD007C7A97 /* CitiesViewControllerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewControllerDataSource.swift; sourceTree = "<group>"; };
 		784CF94720F60D78007C7A97 /* MapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
 		784CF94920F6128F007C7A97 /* UIColor+SLMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+SLMaps.swift"; sourceTree = "<group>"; };
+		784CF94C20F61773007C7A97 /* MapViewControllerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerDataSource.swift; sourceTree = "<group>"; };
 		78B478D720F4DA45007FA7CB /* Locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Locations.json; sourceTree = "<group>"; };
 		78B478D920F4E22F007FA7CB /* ModelCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCity.swift; sourceTree = "<group>"; };
 		78B478DB20F4E27D007FA7CB /* ModelLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLine.swift; sourceTree = "<group>"; };
@@ -110,7 +112,7 @@
 			children = (
 				784CF94020F60CC6007C7A97 /* Cities */,
 				784CF93F20F609F0007C7A97 /* Subway */,
-				78B7DBA520ED36AE00F36B1A /* MapViewController.swift */,
+				784CF94B20F61764007C7A97 /* Map */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -132,6 +134,15 @@
 				784CF94320F60CDD007C7A97 /* CitiesViewControllerDataSource.swift */,
 			);
 			path = Cities;
+			sourceTree = "<group>";
+		};
+		784CF94B20F61764007C7A97 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				78B7DBA520ED36AE00F36B1A /* MapViewController.swift */,
+				784CF94C20F61773007C7A97 /* MapViewControllerDataSource.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		78B7DB9720ED36AD00F36B1A = {
@@ -248,6 +259,7 @@
 				78B478DE20F4E2A6007FA7CB /* ModelStation.swift in Sources */,
 				784CF93C20F60893007C7A97 /* SubwayViewControllerCell.swift in Sources */,
 				784CF94220F60CD7007C7A97 /* CitiesViewController.swift in Sources */,
+				784CF94D20F61773007C7A97 /* MapViewControllerDataSource.swift in Sources */,
 				784CF94420F60CDD007C7A97 /* CitiesViewControllerDataSource.swift in Sources */,
 				78BA281A20ED50E1002B3BBE /* Annotation.swift in Sources */,
 				78B7DBA420ED36AE00F36B1A /* AppDelegate.swift in Sources */,

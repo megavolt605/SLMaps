@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import CoreLocation
 
 class SubwayViewControllerDataSource: NSObject {
     var cityIndex: Int?
+    
+    func locationForStation(at: IndexPath) -> CLLocation? {
+        guard let index = cityIndex else { return nil }
+        return MapService.shared.modelMap.cities[index].lines[at.section].stations[at.row].location
+    }
+
 }
 
 extension SubwayViewControllerDataSource: UITableViewDataSource {
