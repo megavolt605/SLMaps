@@ -53,7 +53,6 @@ extension LocationService: CLLocationManagerDelegate {
         default:
             fatalError("Never should be here") //??
         }
-        //requestAccessCompleted = nil
     }
 
 }

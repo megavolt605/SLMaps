@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MapViewController.swift
 //  SLMaps
 //
 //  Created by Igor Smirnov on 04/07/2018.
@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController {
+class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -23,12 +23,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let dataURL = Bundle.main.url(forResource: "Locations", withExtension: "json")
-        if let dataURL = dataURL, let data = try? Data(contentsOf: dataURL) {
-            let cc = ModelMap(jsonData: data)
-            print(cc)
-        }
 
         mapView.showsUserLocation = true
 

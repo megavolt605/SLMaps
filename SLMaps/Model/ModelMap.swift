@@ -9,7 +9,10 @@
 import Foundation
 
 struct ModelMap: Codable {
+
     var cities: [ModelCity] = []
+
+    init() { }
 
     init(jsonData: Data) {
         let decoder = JSONDecoder()

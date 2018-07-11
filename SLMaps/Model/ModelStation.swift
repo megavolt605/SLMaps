@@ -1,5 +1,5 @@
 //
-//  ModelLine.swift
+//  ModelStation.swift
 //  SLMaps
 //
 //  Created by Igor Smirnov on 10/07/2018.
@@ -7,10 +7,14 @@
 //
 
 import Foundation
+import CoreLocation
 
-struct ModelLine: Codable {
+struct ModelStation: Codable {
 
     var id: String
     var name: String
-    var stations: [ModelStation]
+    var order: Int
+    var lat: CLLocationDegrees
+    var lng: CLLocationDegrees
+    
 }
