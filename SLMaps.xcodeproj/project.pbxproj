@@ -154,6 +154,14 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		784CF95420F64FF3007C7A97 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				784CF94920F6128F007C7A97 /* UIColor+SLMaps.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		78B7DB9720ED36AD00F36B1A = {
 			isa = PBXGroup;
 			children = (
@@ -178,7 +186,7 @@
 				784CF93620F60537007C7A97 /* Model */,
 				784CF93720F60545007C7A97 /* Map */,
 				784CF93A20F6084C007C7A97 /* Controllers */,
-				784CF94920F6128F007C7A97 /* UIColor+SLMaps.swift */,
+				784CF95420F64FF3007C7A97 /* Tools */,
 				784CF93420F6051E007C7A97 /* Resources */,
 			);
 			path = SLMaps;
