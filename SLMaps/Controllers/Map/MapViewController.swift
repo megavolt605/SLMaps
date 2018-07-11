@@ -96,11 +96,10 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         var view = mapView.dequeueReusableAnnotationView(withIdentifier: MapAnnotationView.reuseIdentifier)
         if let annotation = annotation as? MapAnnotation {
-            if view == nil {
-                view = annotation.createView()
-            }
             if let view = view as? MapAnnotationView {
-                view.backgroundView.backgroundColor = UIColor.colorWith(string: annotation.line.hex_color)
+                view.updateWith(annotation: annotation)
+            } else {
+                view = annotation.createView()
             }
         }
         return view
