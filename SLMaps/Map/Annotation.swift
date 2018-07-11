@@ -9,13 +9,26 @@
 import MapKit
 
 class Annotation: NSObject, MKAnnotation {
-    var coordinate: CLLocationCoordinate2D
-    var title: String?
-    var subtitle: String?
+    var coordinate: CLLocationCoordinate2D {
+        return station.location!.coordinate
+    }
+    var title: String? {
+        return station.name
+    }
+    var subtitle: String? {
+        return line.name
+    }
 
-    init(coordinate: CLLocationCoordinate2D, title: String? = nil, subtitle: String? = nil) {
-        self.coordinate = coordinate
-        self.title = title
-        self.subtitle = subtitle
+    var line: ModelLine
+    var station: ModelStation
+
+    init?(line: ModelLine, station: ModelStation) {
+        guard station.location != nil else { return nil }
+        self.line = line
+        self.station = station
+    }
+
+    func createView() -> AnnotationView {
+        return AnnotationView(annotation: self, reuseIdentifier: AnnotationView.reuseIdentifier)
     }
 }

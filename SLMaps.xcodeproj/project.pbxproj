@@ -15,6 +15,7 @@
 		784CF94820F60D78007C7A97 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CF94720F60D78007C7A97 /* MapService.swift */; };
 		784CF94A20F6128F007C7A97 /* UIColor+SLMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CF94920F6128F007C7A97 /* UIColor+SLMaps.swift */; };
 		784CF94D20F61773007C7A97 /* MapViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CF94C20F61773007C7A97 /* MapViewControllerDataSource.swift */; };
+		784CF94F20F626DE007C7A97 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CF94E20F626DE007C7A97 /* AnnotationView.swift */; };
 		78B478D820F4DA45007FA7CB /* Locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 78B478D720F4DA45007FA7CB /* Locations.json */; };
 		78B478DA20F4E22F007FA7CB /* ModelCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B478D920F4E22F007FA7CB /* ModelCity.swift */; };
 		78B478DC20F4E27D007FA7CB /* ModelLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B478DB20F4E27D007FA7CB /* ModelLine.swift */; };
@@ -38,6 +39,7 @@
 		784CF94720F60D78007C7A97 /* MapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
 		784CF94920F6128F007C7A97 /* UIColor+SLMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+SLMaps.swift"; sourceTree = "<group>"; };
 		784CF94C20F61773007C7A97 /* MapViewControllerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerDataSource.swift; sourceTree = "<group>"; };
+		784CF94E20F626DE007C7A97 /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
 		78B478D720F4DA45007FA7CB /* Locations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Locations.json; sourceTree = "<group>"; };
 		78B478D920F4E22F007FA7CB /* ModelCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCity.swift; sourceTree = "<group>"; };
 		78B478DB20F4E27D007FA7CB /* ModelLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLine.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				78BA281920ED50E1002B3BBE /* Annotation.swift */,
+				784CF94E20F626DE007C7A97 /* AnnotationView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -169,8 +172,8 @@
 				784CF93620F60537007C7A97 /* Model */,
 				784CF93720F60545007C7A97 /* Map */,
 				784CF93A20F6084C007C7A97 /* Controllers */,
-				784CF93420F6051E007C7A97 /* Resources */,
 				784CF94920F6128F007C7A97 /* UIColor+SLMaps.swift */,
+				784CF93420F6051E007C7A97 /* Resources */,
 			);
 			path = SLMaps;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				784CF93920F606AB007C7A97 /* SubwayViewController.swift in Sources */,
 				784CF93E20F609E8007C7A97 /* SubwayViewControllerDataSource.swift in Sources */,
 				784CF94820F60D78007C7A97 /* MapService.swift in Sources */,
+				784CF94F20F626DE007C7A97 /* AnnotationView.swift in Sources */,
 				78B478DC20F4E27D007FA7CB /* ModelLine.swift in Sources */,
 				78B478DE20F4E2A6007FA7CB /* ModelStation.swift in Sources */,
 				784CF93C20F60893007C7A97 /* SubwayViewControllerCell.swift in Sources */,

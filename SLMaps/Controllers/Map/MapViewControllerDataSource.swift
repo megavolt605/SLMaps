@@ -20,10 +20,8 @@ class MapViewControllerDataSource {
         var result = [Annotation]()
         MapService.shared.modelMap.cities[index].lines.forEach { line in
             line.stations.forEach { station in
-                if let location = station.location {
-                    result.append(Annotation(coordinate: location.coordinate,
-                                             title: station.name,
-                                             subtitle: line.name))
+                if let annotation = Annotation(line: line, station: station) {
+                    result.append(annotation)
                 }
             }
         }

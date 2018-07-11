@@ -26,6 +26,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        mapView.delegate = self
         mapView.showsUserLocation = true
 
         LocationService.shared.didUpdateLocations = { locations in
@@ -89,3 +90,27 @@ class MapViewController: UIViewController {
 
 }
 
+extension MapViewController: MKMapViewDelegate {
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        var view = mapView.dequeueReusableAnnotationView(withIdentifier: AnnotationView.reuseIdentifier)
+        if let annotation = annotation as? Annotation {
+            if view == nil {
+                view = annotation.createView()
+            }
+            if let view = view as? AnnotationView {
+                view.backgroundView.backgroundColor = UIColor.colorWith(string: annotation.line.hex_color)
+            }
+        }
+        return view
+    }
+
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        view.isSelected = true
+    }
+
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        view.isSelected = false
+    }
+
+}
