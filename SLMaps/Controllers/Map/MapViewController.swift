@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MapViewController.swift
 //  SLMaps
 //
 //  Created by Igor Smirnov on 04/07/2018.
@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController {
+class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var mapTypeSwitch: UISegmentedControl!
 
     var currentLocation: CLLocation?
+    var dataSource = MapViewControllerDataSource()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +43,8 @@ class ViewController: UIViewController {
             }
         }
 
-        let c = CLLocationCoordinate2D(latitude: 51.512703, longitude: -0.115497)
-        let a = Annotation(coordinate: c, title: "Test title", subtitle: "Test subtitle")
-        mapView.addAnnotation(a)
+        mapView.addAnnotations(dataSource.allAnnotations())
+        updateMapRegion(coordinate: dataSource.initialCoordinate)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -52,12 +52,14 @@ class ViewController: UIViewController {
         LocationService.shared.stop()
     }
 
-    var zoom: Double = 64.0 {
-        didSet {
-            let span = MKCoordinateSpan(latitudeDelta: 0.1 * zoom, longitudeDelta: 0.1 * zoom)
-            let region = MKCoordinateRegion(center: mapView.centerCoordinate, span: span)
-            self.mapView.setRegion(region, animated: true)
-        }
+    func updateMapRegion(coordinate: CLLocationCoordinate2D? = nil) {
+        let span = MKCoordinateSpan(latitudeDelta: 0.1 * zoom, longitudeDelta: 0.1 * zoom)
+        let region = MKCoordinateRegion(center: coordinate ?? mapView.centerCoordinate, span: span)
+        self.mapView.setRegion(region, animated: true)
+    }
+
+    var zoom: Double = 1.0 {
+        didSet { updateMapRegion() }
     }
 
     @IBAction func zoomInButtonAction(_ sender: Any) {

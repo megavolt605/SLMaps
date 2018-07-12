@@ -1,5 +1,5 @@
 //
-//  Annotation.swift
+//  MapAnnotation.swift
 //  SLMaps
 //
 //  Created by Igor Smirnov on 04/07/2018.
@@ -8,7 +8,7 @@
 
 import MapKit
 
-class Annotation: NSObject, MKAnnotation {
+class MapAnnotation: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     var title: String?
     var subtitle: String?
