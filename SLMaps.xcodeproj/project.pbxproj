@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		782C636B211220F8001DA917 /* MapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782C636A211220F8001DA917 /* MapAnnotationView.swift */; };
+		782C636D21123096001DA917 /* MapOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782C636C21123096001DA917 /* MapOverlay.swift */; };
+		782C636F2112368D001DA917 /* MapOverlayRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782C636E2112368D001DA917 /* MapOverlayRenderer.swift */; };
 		78B7DBA420ED36AE00F36B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7DBA320ED36AE00F36B1A /* AppDelegate.swift */; };
 		78B7DBA620ED36AE00F36B1A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7DBA520ED36AE00F36B1A /* MapViewController.swift */; };
 		78B7DBA920ED36AE00F36B1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78B7DBA720ED36AE00F36B1A /* Main.storyboard */; };
@@ -32,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		782C636A211220F8001DA917 /* MapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationView.swift; sourceTree = "<group>"; };
+		782C636C21123096001DA917 /* MapOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapOverlay.swift; sourceTree = "<group>"; };
+		782C636E2112368D001DA917 /* MapOverlayRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapOverlayRenderer.swift; sourceTree = "<group>"; };
 		78B7DBA020ED36AD00F36B1A /* SLMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B7DBA320ED36AE00F36B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78B7DBA520ED36AE00F36B1A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +128,9 @@
 			isa = PBXGroup;
 			children = (
 				78BA281920ED50E1002B3BBE /* MapAnnotation.swift */,
+				782C636A211220F8001DA917 /* MapAnnotationView.swift */,
+				782C636C21123096001DA917 /* MapOverlay.swift */,
+				782C636E2112368D001DA917 /* MapOverlayRenderer.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -266,9 +275,11 @@
 				78ED972920F689CE00D634DB /* UIColor+SLMaps.swift in Sources */,
 				78D288BF20F6836B00663F32 /* CitiesViewControllerDataSource.swift in Sources */,
 				78D288C120F683A900663F32 /* MapService.swift in Sources */,
+				782C636D21123096001DA917 /* MapOverlay.swift in Sources */,
 				78D288C620F686B700663F32 /* SubwayViewControllerDataSource.swift in Sources */,
 				78B7DBB620ED372300F36B1A /* LocationService.swift in Sources */,
 				78D288C420F686AD00663F32 /* SubwayViewController.swift in Sources */,
+				782C636F2112368D001DA917 /* MapOverlayRenderer.swift in Sources */,
 				78ED972F20F68F0C00D634DB /* SubwayViewControllerInteractor.swift in Sources */,
 				78ED972B20F68B8100D634DB /* CitiesViewControllerInteractor.swift in Sources */,
 				78D288B020F67E2200663F32 /* ModelLine.swift in Sources */,
@@ -277,6 +288,7 @@
 				78B7DBA420ED36AE00F36B1A /* AppDelegate.swift in Sources */,
 				78D288B220F67E7E00663F32 /* ModelCity.swift in Sources */,
 				78D288C820F686BF00663F32 /* SubwayViewControllerCell.swift in Sources */,
+				782C636B211220F8001DA917 /* MapAnnotationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

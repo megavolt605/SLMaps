@@ -13,4 +13,5 @@ struct ModelLine: Codable {
     var name: String
     var stations: [ModelStation]
     var hex_color: String
+    var circle: Bool?
 }

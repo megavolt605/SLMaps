@@ -19,10 +19,16 @@ struct MapViewControllerDataSource {
         var result: [MapAnnotation] = []
         MapService.shared.modelMap.cities[cityIndex].lines.forEach { line in
             line.stations.forEach { station in
-                result.append(MapAnnotation(coordinate: station.coordinate, title: station.name, subtitle: line.name))
+                let color = UIColor.colorWith(string: line.hex_color)
+                result.append(MapAnnotation(coordinate: station.coordinate, title: station.name, subtitle: line.name, color: color))
             }
         }
         return result
+    }
+
+    func allOverlays() -> [MapOverlay] {
+        return MapService.shared.modelMap.cities[cityIndex].lines
+            .map { MapOverlay(line: $0) }
     }
 
 }

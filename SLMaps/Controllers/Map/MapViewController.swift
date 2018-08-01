@@ -43,7 +43,9 @@ class MapViewController: UIViewController {
             }
         }
 
+        mapView.delegate = self
         mapView.addAnnotations(dataSource.allAnnotations())
+        mapView.addOverlays(dataSource.allOverlays())
         updateMapRegion(coordinate: dataSource.initialCoordinate)
     }
 
@@ -90,3 +92,26 @@ class MapViewController: UIViewController {
 
 }
 
+extension MapViewController: MKMapViewDelegate {
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if let annotation = annotation as? MapAnnotation {
+            let view = MapAnnotationView(annotation: annotation, reuseIdentifier: "Annotation")
+            return view
+        }
+        return nil
+    }
+
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        view.isSelected = true
+    }
+
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        view.isSelected = false
+    }
+
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        return MapOverlayRenderer(overlay: overlay)
+    }
+
+}
